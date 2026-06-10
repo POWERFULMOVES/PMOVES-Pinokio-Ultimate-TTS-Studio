@@ -1,7 +1,7 @@
 const path = require('path')
 module.exports = {
   version: "3.7",
-  title: "Ultimate-TTS-Studio-SUP3R-Edition",
+  title: "Ultimate-TTS-Studio",
   description: "Kokoro, KittenTTS, Higgs audio, Chatterbox/Multi, Fish-Speech, F5 & index-tts & indextts2, VoxCPM and VibeVoice in one app",
   icon: "icon.png",
   menu: async (kernel, info) => {
@@ -99,5 +99,6 @@ module.exports = {
     }
   }
 }
+
 
 

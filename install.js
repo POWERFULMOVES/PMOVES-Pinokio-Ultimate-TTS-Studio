@@ -19,7 +19,7 @@ module.exports = {
         message: [
           "conda install -c conda-forge pynini==2.1.6 -y",
           "conda install -y -c conda-forge portaudio",
-          "uv pip install gradio devicetorch",
+          "uv pip install gradio devicetorch setuptools==80.9.0",
           "uv pip install -r requirements.txt",
           "uv pip install WeTextProcessing --no-deps",
           "pip uninstall phonemizer-fork -y",
@@ -60,7 +60,7 @@ module.exports = {
       method: "shell.run",
       params: {
         sudo: true,
-        message: "apt install libaio-dev espeak-ng"
+        message: "apt-get install -y libaio-dev espeak-ng sox libsox-fmt-all"
       },
       next: 'end'
     },
@@ -69,7 +69,7 @@ module.exports = {
       method: "shell.run",
       params: {
         sudo: true,
-        message: "yum install libaio-devel espeak-ng"
+        message: "yum install -y libaio-devel espeak-ng sox"
       },
       next: 'end'
     },
@@ -78,7 +78,10 @@ module.exports = {
       method: "shell.run",
       params: {
         sudo: true,
-        message: "winget install --id=eSpeak-NG.eSpeak-NG -e --silent --accept-source-agreements --accept-package-agreements"
+        message: [
+          "winget install --id=eSpeak-NG.eSpeak-NG -e --silent --accept-source-agreements --accept-package-agreements",
+          "winget install --id=ChrisBagwell.SoX -e --silent --accept-source-agreements --accept-package-agreements --force --disable-interactivity"
+        ]
       }
     },
     {
